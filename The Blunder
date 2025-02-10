@@ -1,0 +1,2 @@
+SELECT CEIL(ABS(AVG(REPLACE(Salary, '0', '')) - AVG(Salary))) AS Salary_Error
+FROM EMPLOYEES;
