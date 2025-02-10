@@ -1,0 +1,15 @@
+SELECT 
+    CASE
+        -- Check if the side lengths are valid
+        WHEN A <= 0 OR B <= 0 OR C <= 0 OR A + B <= C OR A + C <= B OR B + C <= A THEN 'Not A Triangle'
+        
+        -- Check for an Equilateral triangle (all sides are equal)
+        WHEN A = B AND B = C THEN 'Equilateral'
+        
+        -- Check for an Isosceles triangle (two sides are equal)
+        WHEN A = B OR A = C OR B = C THEN 'Isosceles'
+        
+        -- If none of the above, it must be a Scalene triangle (all sides are different)
+        ELSE 'Scalene'
+    END AS Triangle_Type
+FROM TRIANGLES;
